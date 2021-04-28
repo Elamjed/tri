@@ -7,7 +7,7 @@ i,j,x:INTEGER;
 BEGIN
     FOR i FROM 1 TO t.length-1 STEP 1  DO
        x:=t[i];
-       j:=i;
+       j:=i-1;
        WHILE (j>=0&&x<t[j]) DO
            t[j+1]:=t[j];
            j:=j-1
