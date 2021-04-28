@@ -1,16 +1,18 @@
-PROCEDURE insertion(t : ARRAY_OF integer[1,2,4,0,4,3];)
+PROCEDURE insertion
+
 VAR
-i,j:INTEGER;
+t : ARRAY_OF INTEGER[50];
+i,j,x:INTEGER;
     
 BEGIN
-    FOR i FROM 0 TO t.length-1 STEP 1  DO
+    FOR i FROM 1 TO t.length-1 STEP 1  DO
        x:=t[i];
        j:=i;
-       WHILE (t[j-1]>x) DO
-           t[j]:=t[j-1];
-           j:=j+1
+       WHILE (j>=0&&x<t[j]) DO
+           t[j+1]:=t[j];
+           j:=j-1
        END_WHILE
-t[j]:=x;
+t[j+1]:=x;
        
     END_FOR
 END
